@@ -16,3 +16,25 @@ cv2.destroyAllWindows()
 blue = img[:, :, 0]
 green = img[:, :, 1]
 red = img[:, :, 2]
+
+#  instead of lines above you can use these lines below
+b, g, r = cv2.split(img)
+
+# after that, process on each channel, you can merge those channel together again
+img_merge = cv2.merge((b, g, r))
+
+# show the split channel
+cv2.imshow("Blue red ", b)
+cv2.imshow("Merged img ", img_merge)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+img_2 = cv2.imread("images/Osteosarcoma_01.tif")
+# this filter used for edges detection in pic by min and max values
+edges = cv2.Canny(img_2, 100, 200)
+
+cv2.imshow("Original picture", img_2)
+cv2.imshow("Canny", edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
