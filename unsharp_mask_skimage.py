@@ -6,9 +6,9 @@ img = io.imread("images/sample/01.png", as_gray=True)
 
 # radius is the value of blurring
 # amount is the value of multiplication factor (original - blurred) image
-unsharped_img = unsharp_mask(img, radius=3, amount=2)
+unsharped_img = unsharp_mask(img, radius=1, amount=3)
 
-fig = plt.figure(figsize=(12, 12))
+fig = plt.figure(figsize=(200, 200))
 
 ax1 = fig.add_subplot(1, 2, 1)
 ax1.imshow(img, cmap="gray")
